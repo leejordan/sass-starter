@@ -16,17 +16,17 @@
 // Styleguide Links.Default
 
 a {
-    color: @link-colour;
-    text-decoration: @link-decoration;
-    font-weight: @font-weight-strong;
+    color: $colour-link;
+    text-decoration: $link-decoration;
+    font-weight: $font-weight-strong;
 
     &:hover,
     &:focus {
-        color: @link-hover-colour;
-        text-decoration: @link-decoration;
+        color: $link-hover-colour;
     }
 
     &:focus {
-        .tab-focus-state();
+        outline: none;
+        box-shadow: 0 0 0 2px $colour-link;
     }
 }
