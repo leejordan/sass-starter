@@ -1,0 +1,16 @@
+{
+  "name": "sass-starter",
+  "version": "1.0.0",
+  "description": "Barebones sass starter",
+  "main": "index.html",
+  "author": "@leejordan",
+  "license": "ICT",
+  "scripts": {
+    "build": "node-sass --precision 8 --output-style expanded --include-path scss scss/master.scss css/sass-starter.css",
+    "watch": "watch 'npm run build' scss -d -u"
+  },
+  "devDependencies": {
+    "node-sass": "^4.0.0",
+    "watch": "^1.0.0"
+  }
+}
