@@ -1,2 +1,3 @@
-# sass-starter
-barebones sass compilation
+# Sass-starter
+
+barebones sass compilation and styleguide generation

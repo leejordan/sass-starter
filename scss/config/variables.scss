@@ -1,9 +1,44 @@
 //
 // Variables
 //
+// For when it's going to be used more than once.
+//
 
 //
 // Colours
+// ---
 
-$colour-null: rgba(0,0,0,0);
-$color-text: #666;
+// Primary Colours
+//
+// The primary colors for branding.
+//
+// $leonardo      -  #2980b9; Leader blue
+// $donatello     -  #8e44ad; Purple tech
+// $raphael       -  #c0392b; Sai
+// $michelangelo  -  rgb(232, 126, 4); Cowabunga
+// $splinter      -  #FDE3A7; Master
+//
+// Styleguide Colours.Brand
+
+// Generic
+$colour-null: rgba(0, 0, 0, 0);
+$colour-black: #000;
+
+
+// Element specific
+$color-bg-base: #e9e9e9;
+$color-text-base: #333;
+
+//
+// Typography
+// ---
+
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+//
+// Scaffolding
+// ---
+
+$border-default: 2px solid $color-text-base;

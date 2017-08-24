@@ -1,0 +1,10 @@
+{
+  "title": "Sass starter",
+  "source": "scss/",
+  "destination": "styleguide/",
+  "homepage": "../README.md",
+  "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
+  "css": [
+    "../css/sass-starter.css"
+  ]
+}

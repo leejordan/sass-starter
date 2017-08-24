@@ -1,0 +1,32 @@
+//
+// Links
+//
+// Default link style and modifiers
+//
+
+
+//
+// Default links
+//
+// The standard sppearance and behaviour of links without any other class
+//
+// Markup:
+// <a href="#0">a link</a>
+//
+// Styleguide Links.Default
+
+a {
+    color: @link-colour;
+    text-decoration: @link-decoration;
+    font-weight: @font-weight-strong;
+
+    &:hover,
+    &:focus {
+        color: @link-hover-colour;
+        text-decoration: @link-decoration;
+    }
+
+    &:focus {
+        .tab-focus-state();
+    }
+}
