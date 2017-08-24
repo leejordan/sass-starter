@@ -2,13 +2,11 @@
 // Links
 //
 // Default link style and modifiers
-//
-
 
 //
 // Default links
 //
-// The standard sppearance and behaviour of links without any other class
+// The standard appearance and behaviour of links without any other class
 //
 // Markup:
 // <a href="#0">a link</a>
@@ -26,7 +24,7 @@ a {
     }
 
     &:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px $colour-link;
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color;
     }
 }
