@@ -1,8 +1,6 @@
-//
 // Reset
 //
-// Resets the styling of common HTML elements to a consistent baseline
-//
+// Resets the styling of common HTML elements to a consistent baseline.
 
 *,
 *::after,
@@ -131,11 +129,6 @@ menu,
 nav,
 section {
     display: block;
-}
-
-ol,
-ul {
-    list-style: none;
 }
 
 blockquote,

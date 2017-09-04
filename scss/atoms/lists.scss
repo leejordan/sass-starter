@@ -1,0 +1,39 @@
+// Lists
+//
+// The standard appearance of lists
+//
+// Styleguide Atoms.Lists
+
+
+// Ordered lists
+//
+// Markup:
+// <ol>
+//    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+//    <li>Aliquam tincidunt mauris eu risus.</li>
+//    <li>Vestibulum auctor dapibus neque.</li>
+// </ol>
+//
+// Styleguide Atoms.Lists.Ordered
+
+ol {
+    margin: 1em 0;
+    padding: 0 0 0 1.5em;
+}
+
+
+// Unordered lists
+//
+// Markup:
+// <ul>
+//    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+//    <li>Aliquam tincidunt mauris eu risus.</li>
+//    <li>Vestibulum auctor dapibus neque.</li>
+// </ul>
+//
+// Styleguide Atoms.Lists.Unordered
+
+ul {
+    margin: 1em 0;
+    padding: 0 0 0 1.5em;
+}

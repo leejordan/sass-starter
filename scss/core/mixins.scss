@@ -1,0 +1,25 @@
+// Mixins
+//
+// Generate css declarations programmatically
+//
+// Styleguide Core.Mixins
+
+
+// Font size
+//
+// Font size set with rem and a pixel fallback. Base rem value is 1 and all font
+// sizes are relative to the pixel size set by variable $font-size-base
+//
+// ```
+// @include font-size(1) // Base font size
+// @include font-size(1.2) // Larger than base size
+// @include font-size(.8) // Smaller than base size
+// ```
+//
+// Styleguide Core.Mixins.Font size
+
+@mixin font-size($size) {
+    font-size: ($font-size-base * $size);
+    font-size: $size rem;
+}
+

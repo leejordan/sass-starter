@@ -2,11 +2,13 @@
 
 barebones sass compilation and styleguide generation
 
-## Requirements
+## Technical info
+
+### Requirements
 
 - [node.js](https://nodejs.org/en/download/)
 
-## Setup
+### Setup
 
 ```
 git clone https://github.com/leejordan/sass-starter.git
@@ -14,7 +16,7 @@ cd sass-starter
 npm install
 ```
 
-## Commands
+### Commands
 
 ```
 npm run build:min // builds minified css in css folder

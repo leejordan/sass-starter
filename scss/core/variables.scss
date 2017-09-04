@@ -1,0 +1,83 @@
+// Colours
+//
+// The colour palette for web.
+//
+// Styleguide Core.Colours
+
+
+// Utility Colours
+
+$colour-null: rgba(0, 0, 0, 0);
+$colour-black: #000;
+$colour-white: #fff;
+
+
+// Default Colours
+//
+// The default colours for certain elements.
+//
+// $colour-body - #e9e9e9; body background colour
+// $colour-text - #333; text colour
+// $colour-link - #00f; link colour
+//
+// Styleguide Core.Colours.Default
+
+$colour-body: #e9e9e9;
+$colour-text: #333;
+$colour-link: #00f;
+
+
+// Brand Colours
+//
+// The primary colors for branding.
+//
+// $colour-brand-primary - #e9e9e9; Primary
+// $colour-brand-secondary - #333; Secondary
+// $colour-brand-highlight - #e87e04; Highlight
+//
+// Styleguide Core.Colours.Brand
+
+$colour-brand-primary: #e9e9e9;
+$colour-brand-secondary: #333;
+$colour-brand-highlight: #e87e04;
+
+
+// Feedback Colours
+//
+// Colors for signifying certain states.
+//
+// $colour-state-info - #d9edf7; Info
+// $colour-state-success - #dff0d8; Success
+// $colour-state-warning - #f2dede; Warning
+//
+// Styleguide Core.Colours.Feedback
+
+$colour-state-info: #d9edf7;
+$colour-state-success: #dff0d8;
+$colour-state-warning: #f2dede;
+
+
+// Typography
+
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-size-small: 12px;
+$font-size-base: 14px;
+
+$font-weight-light: 200;
+$font-weight-base: 400;
+$font-weight-strong: 800;
+
+$line-height-base: 1.5;
+
+
+// Borders
+
+$border-default: 2px solid $colour-text;
+$border-radius-base: 5px;
+
+
+// Links
+
+$link-decoration: underline;
+$link-hover-colour: darken($colour-link, 20%);

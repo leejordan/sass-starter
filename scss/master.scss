@@ -1,15 +1,50 @@
+// Core principles
 //
-// One file to rule them all
+// Core principles that establish underlying rules.
 //
-// (and in the darkness bind them)
+// Weight: 1
 //
+// Styleguide Core
 
-// Config
-@import 'config/variables';
-@import 'config/mixins';
-@import 'config/reset';
-
-// Core
+@import 'core/variables';
+@import 'core/mixins';
+@import 'core/reset';
 @import 'core/scaffolding';
 @import 'core/print';
-@import 'core/links';
+
+
+// Atoms
+//
+// The basic building blocks. Atoms are individual HTML elements, such as a
+// form label, an input or a button.
+//
+// Weight: 2
+//
+// Styleguide Atoms
+
+@import 'atoms/buttons';
+@import 'atoms/links';
+@import 'atoms/lists';
+@import 'atoms/typography';
+
+
+// Molecules
+//
+// Molecules are collections of more atomic elements. For example, The atoms
+// of inputs, buttons and labels combine to create a form molecule.
+//
+//
+// Weight: 3
+//
+// Styleguide Molecules
+
+
+// Organisms
+//
+// Organisms are groups of molecules joined together to form coherent sections
+// or components of an interface or page
+//
+//
+// Weight: 4
+//
+// Styleguide Organisms

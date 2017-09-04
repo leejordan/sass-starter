@@ -1,0 +1,102 @@
+// Buttons
+//
+// Inputs, buttons, and links that look like buttons.
+//
+// Styleguide Atoms.Buttons
+
+
+// Default button
+//
+// Styles applied by default to all `button` elements and `type="button"` elements.
+// Can also be applied to other elements such as links with class `button`.
+//
+// Markup:
+// <button>a button element</button>
+// <input type="button" value="an input of type button">
+// <a href="#0" class="button">a link that looks like a button</a>
+//
+// Styleguide Atoms.Buttons.Default
+
+button,
+.button,
+[type="button"] {
+    transition: background-color .1s ease-out, box-shadow .2s ease-out;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+    padding: ($font-size-base / 2) ($font-size-base * 2);
+    margin-bottom: ($font-size-base * .31); // same size as default white space between inline elements
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: none;
+    background-color: $colour-brand-primary;
+    color: $colour-text;
+    border: 0;
+    border-radius: $border-radius-base;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $colour-text;
+        background-color: darken($colour-brand-primary, 10%);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px $colour-text;
+    }
+}
+
+
+// Primary button
+//
+// For when there is a single primary call to action that needs to stand out.
+//
+// Markup:
+// <button class="button--primary">a primary button</button>
+// <a href="#0" class="button button--primary">a link that looks like a primary button</a>
+//
+// Styleguide Atoms.Buttons.Primary
+
+.button--primary {
+    background-color: $colour-state-success;
+
+    &:hover,
+    &:focus {
+        background-color: darken($colour-state-success, 10%);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $colour-text;
+    }
+}
+
+
+// Secondary button
+//
+// For when there is are multiple secondary calls to action.
+//
+// Markup:
+// <button class="button--secondary">a secondary button</button>
+// <a href="#0" class="button button--secondary">a link that looks like a secondary button</a>
+//
+// Styleguide Atoms.Buttons.Secondary
+
+.button--secondary {
+    background-color: $colour-state-info;
+
+    &:hover,
+    &:focus {
+        background-color: darken($colour-state-info, 10%);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $colour-text;
+    }
+}

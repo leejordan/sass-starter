@@ -1,10 +1,6 @@
-//
 // Scaffolding
 //
-// Explicit baseline styles for core structural elements.
-//
-
-// html defaults
+// Explicit baseline styles for core structural elements
 
 html {
     font-size: $font-size-base;
@@ -15,7 +11,6 @@ html {
     -webkit-tap-highlight-color: $colour-null;
 }
 
-// body defaults
 body {
     min-height: 100vh;
     margin: 0;
@@ -27,23 +22,4 @@ body {
     text-align: left;
     background-color: $colour-body;
     -webkit-overflow-scrolling: touch;
-}
-
-// Lists
-ol {
-    margin: 1em 0;
-    padding: 0 0 0 1.5em;
-}
-
-ul {
-    margin: 1em 0;
-    padding: 0 0 0 1.5em;
-}
-
-// Horizontal rules
-hr {
-    height: 0;
-    margin: 1em 0;
-    border: 0;
-    border-top: $border-default;
 }
