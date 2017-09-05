@@ -319,12 +319,12 @@
   .kss-section--depth-1 {
     margin-top: 30px; }
   .kss-section--depth-2 {
-    margin-top: 80px;
-    border-top: 1px solid #CCCCCC; }
+    margin-top: 80px; }
   .kss-section--depth-3 {
     margin-top: 0; }
 
 .kss-section__content {
+  position: relative;
   padding: 1em; }
   .kss-section__content ol,
   .kss-section__content ul,
@@ -339,29 +339,38 @@
 
 .kss-section__item {
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 1em;
   color: #E87E04;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal; }
+  .kss-section__item--depth-1 {
+    font-size: 2.3rem; }
   .kss-section__item--depth-2 {
-    font-size: 1.875rem; }
+    font-size: 2rem; }
   .kss-section__item--depth-3 {
     padding-top: 30px;
-    font-size: 1.375rem; }
+    font-size: 1.6rem; }
   .kss-section__item--depth-4 {
-    font-size: 1.25rem; }
+    font-size: 1.4rem; }
   .kss-section__item--depth-5 {
-    font-size: 1.125rem; }
+    font-size: 1.2rem; }
   .kss-section__item--depth-6 {
     font-size: 1rem; }
 
 .kss-section__ref {
   display: inline-block;
   vertical-align: middle;
-  padding-right: 5px; }
+  padding: .25em .5em;
+  margin-right: .5em;
+  font-size: 0.8em;
+  color: #999;
+  border: 1px solid #ccc; }
+  @media only screen and (min-width: 64.0625em) {
+    .kss-section__ref {
+      margin-left: -1em; } }
 
 .kss-section__name {
   display: inline-block;
@@ -406,7 +415,7 @@
   .kss-section__description ol,
   .kss-section__description ul,
   .kss-section__description p {
-    font-size: 1rem; }
+    font-size: 1.1rem; }
   .kss-section__description a {
     color: #3498DB;
     text-decoration: none; }
@@ -482,7 +491,7 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  height: 127px;
+  height: 200px;
   margin: 0 auto;
   margin-top: 10px;
   border: 1px solid #CCCCCC;
@@ -500,20 +509,20 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 5px;
+  padding: 1em;
   background: #FFFFFF; }
 
 .kss-color__name {
   display: block;
   min-height: 22px;
   font-weight: 700;
-  font-size: 0.875em;
+  font-size: 1em;
   line-height: 1.6; }
 
 .kss-color__var,
 .kss-color__code {
   display: block;
-  font-size: 0.75em;
+  font-size: 1em;
   line-height: 1.4; }
 
 .kss-color .kss-parameters__name {
