@@ -170,9 +170,6 @@ select {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
 }
 
 input[type="radio"],
@@ -222,12 +219,6 @@ select {
 
 select::-ms-expand {
     display: none;
-}
-
-label {
-  // Allow labels to use `margin` for spacing.
-  display: inline-block;
-  margin-bottom: .5rem;
 }
 
 fieldset {

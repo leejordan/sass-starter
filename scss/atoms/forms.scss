@@ -1,0 +1,181 @@
+// Forms
+//
+// Inputs, textareas, and selects. The atomic parts of forms.
+//
+// Styleguide Atoms.Forms
+
+
+// Labels
+//
+// We use labels adjacent to inputs because....
+//
+// Markup:
+// <label for="name">your name</label>
+//
+// Styleguide Atoms.Forms.Labels
+
+label,
+legend {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: ($font-size-base * .31);
+}
+
+
+// Inputs
+//
+// Styles applied by default to the following elements:
+//
+// ```
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+// ```
+//
+// Please note that `display: block;` and `width: 100%;` are set by default so these
+// elements always take up the full width of their containing element.
+//
+// Markup:
+// <input id="name" type="text" name="name" placeholder="default text input">
+// <input id="password" type="password" name="password" placeholder="default password input">
+// <select id="option" name="option">
+//     <option value="1">option 1</option>
+//     <option value="2">option 2</option>
+//     <option value="3">option 3</option>
+// </select>
+// <textarea id="comment" name="comment" placeholder="default textarea"></textarea>
+// <input type="button" name="search" value="default input type button">
+//
+// Styleguide Atoms.Forms.Inputs
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: $font-size-base;
+    padding: .5em 1em;
+    @include font-size(1);
+    line-height: $line-height-base;
+    color: $colour-text;
+    background-color: $colour-white;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid $colour-text;
+    border-radius: $border-radius-base; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+    &:hover,
+    &:focus {
+        color: $colour-text;
+        background-color: rgba($colour-text, .1);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px $colour-text;
+    }
+}
+
+// Overrides iOS user agent properties
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+// Give textarea a min height
+textarea {
+    height: auto;
+    min-height: 10em;
+}
+
+
+// Radio buttons
+//
+// Styles applied by default to radio type inputs.
+//
+// Please note that `display: block;` is set by default on labels related to radio
+// inputs so they always take up the full width of their containing element.
+//
+// Markup:
+// <input type="radio" name="radio" id="radio1" value="1" /><label for="radio1"> radio 1</label>
+// <input type="radio" name="radio" id="radio2" value="2" /><label for="radio2"> radio 2</label>
+//
+// Styleguide Atoms.Forms.Radio buttons
+
+// Checkboxes
+//
+// Styles applied by default to checkbox type inputs.
+//
+// Please note that `display: block;` is set by default on labels related to checkbox
+// inputs so they always take up the full width of their containing element.
+//
+// Markup:
+// <input type="checkbox" name="checkbox" id="checkbox1" value="1" /><label for="checkbox1"> checkbox 1</label>
+// <input type="checkbox" name="checkbox" id="checkbox2" value="2" /><label for="checkbox2"> checkbox 2</label>
+//
+// Styleguide Atoms.Forms.Checkboxes
+
+input[type="radio"],
+input[type="checkbox"] {
+    float: left;
+    margin-top: .75em;
+    margin-left: 1em;
+
+    &:focus {
+        outline: 3px solid $colour-text;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+
+    & ~ label {
+        display: block;
+        margin-bottom: ($font-size-base * .31); // same size as default white space between inline elements
+        padding: .5em 1em .5em 2.5em;
+        border-radius: $border-radius-base;
+
+        &:hover {
+            color: $colour-text;
+            background-color: rgba($colour-text, .1);
+        }
+    }
+
+    &:checked {
+        & + label {
+            background-color: $colour-state-success;
+        }
+    }
+}
+
+

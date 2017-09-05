@@ -20,6 +20,6 @@
 
 @mixin font-size($size) {
     font-size: ($font-size-base * $size);
-    font-size: $size rem;
+    font-size: #{$size}rem;
 }
 
