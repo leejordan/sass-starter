@@ -5,6 +5,6 @@
   "homepage": "../README.md",
   "builder": "styleguide-template/",
   "css": [
-    "../css/sass-starter.css"
+    "sass-starter/css/sass-starter.css"
   ]
 }

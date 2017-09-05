@@ -7,8 +7,8 @@
   "license": "ICT",
   "scripts": {
     "build": "npm run build:min | npm run build:max | npm run build:docs",
-    "build:min": "node-sass --precision 8 --output-style compressed --include-path scss scss/master.scss css/sass-starter.min.css",
-    "build:max": "node-sass --precision 8 --output-style expanded --include-path scss scss/master.scss css/sass-starter.css",
+    "build:min": "node-sass --precision 8 --output-style compressed --include-path scss scss/master.scss styleguide/sass-starter/css/sass-starter.min.css",
+    "build:max": "node-sass --precision 8 --output-style expanded --include-path scss scss/master.scss styleguide/sass-starter/css/sass-starter.css",
     "build:docs": "kss --config kss-config.json",
     "watch": "watch 'npm run build' scss -d -u"
   },
