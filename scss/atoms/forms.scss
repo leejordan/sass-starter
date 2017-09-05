@@ -124,12 +124,15 @@ textarea {
 //
 // Styles applied by default to radio type inputs.
 //
-// Please note that `display: block;` is set by default on labels related to radio
+// **Please note** that `display: block;` is set by default on labels related to radio
 // inputs so they always take up the full width of their containing element.
+// The label must be directly adjacent to the input in order for the associated styles to work.
 //
 // Markup:
-// <input type="radio" name="radio" id="radio1" value="1" /><label for="radio1"> radio 1</label>
-// <input type="radio" name="radio" id="radio2" value="2" /><label for="radio2"> radio 2</label>
+// <input type="radio" name="radio" id="radio1" value="1" />
+// <label for="radio1"> radio 1</label>
+// <input type="radio" name="radio" id="radio2" value="2" />
+// <label for="radio2"> radio 2</label>
 //
 // Styleguide Atoms.Forms.Radio buttons
 
@@ -137,12 +140,15 @@ textarea {
 //
 // Styles applied by default to checkbox type inputs.
 //
-// Please note that `display: block;` is set by default on labels related to checkbox
+// **Please note** that `display: block;` is set by default on labels related to checkbox
 // inputs so they always take up the full width of their containing element.
+// The label must be directly adjacent to the input in order for the associated styles to work.
 //
 // Markup:
-// <input type="checkbox" name="checkbox" id="checkbox1" value="1" /><label for="checkbox1"> checkbox 1</label>
-// <input type="checkbox" name="checkbox" id="checkbox2" value="2" /><label for="checkbox2"> checkbox 2</label>
+// <input type="checkbox" name="checkbox" id="checkbox1" value="1" />
+// <label for="checkbox1"> checkbox 1</label>
+// <input type="checkbox" name="checkbox" id="checkbox2" value="2" />
+// <label for="checkbox2"> checkbox 2</label>
 //
 // Styleguide Atoms.Forms.Checkboxes
 
@@ -157,7 +163,7 @@ input[type="checkbox"] {
         outline: 5px auto -webkit-focus-ring-color;
     }
 
-    & ~ label {
+    + label {
         display: block;
         margin-bottom: ($font-size-base * .31); // same size as default white space between inline elements
         padding: .5em 1em .5em 2.5em;
@@ -170,7 +176,7 @@ input[type="checkbox"] {
     }
 
     &:checked {
-        & + label {
+        + label {
             background-color: $colour-state-success;
         }
     }
