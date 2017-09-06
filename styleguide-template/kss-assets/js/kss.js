@@ -118,6 +118,7 @@
                            '<span class="kss-color__code">' + colorCode + '</span>';
 
         if (isHexadecimal || isRGB) {
+          $(this).parent().find('.kss-parameters__heading').remove();
           $(this).parent().addClass('kss-colors-container');
           $(this).addClass('kss-color').css('background', colorCode);
           $(this).find('.kss-parameters__description').html(colorContent);
