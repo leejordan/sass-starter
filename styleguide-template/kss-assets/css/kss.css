@@ -6,7 +6,6 @@
 .kss-title {
   margin: 0;
   color: #E87E04;
-  text-align: center;
   font-size: 1.5rem;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -116,7 +115,7 @@
 .kss-navigation__title {
   display: none;
   box-sizing: border-box;
-  padding: 20px 10px; }
+  padding: 1em 1em 1em 40px; }
   @media only screen and (min-width: 64.0625em) {
     .kss-navigation__title {
       display: block; } }
@@ -140,7 +139,7 @@
   display: block;
   box-sizing: border-box;
   margin-top: 1em;
-  padding: 5px 20px;
+  padding: 5px 5px 5px 40px;
   color: #222222;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
@@ -175,13 +174,12 @@
   padding: 0;
   list-style-type: none; }
   .kss-nav__subnav .kss-nav__item a {
-    padding: 2px 10px;
-    padding-left: 30px;
+    padding: 2px 10px 2px 50px;
     font-size: 16px;
     font-weight: 300; }
   .kss-nav__subnav .kss-nav__item--grandchild a {
     margin-top: 0;
-    padding-left: 40px;
+    padding-left: 60px;
     font-size: 14px; }
 
 .kss-markdown {
@@ -339,7 +337,6 @@
 
 .kss-section__item {
   margin: 0;
-  margin-bottom: 1em;
   color: #E87E04;
   font-size: 2.5rem;
   font-family: 'Lato', sans-serif;
@@ -351,7 +348,7 @@
   .kss-section__item--depth-2 {
     font-size: 2rem; }
   .kss-section__item--depth-3 {
-    padding-top: 30px;
+    padding-top: 40px;
     font-size: 1.6rem; }
   .kss-section__item--depth-4 {
     font-size: 1.4rem; }
@@ -362,19 +359,14 @@
 
 .kss-section__ref {
   display: inline-block;
-  vertical-align: middle;
-  padding: .25em .5em;
+  vertical-align: baseline;
   margin-right: .5em;
   font-size: 0.8em;
-  color: #999;
-  border: 1px solid #ccc; }
-  @media only screen and (min-width: 64.0625em) {
-    .kss-section__ref {
-      margin-left: -1em; } }
+  color: #ccc; }
+
 
 .kss-section__name {
-  display: inline-block;
-  vertical-align: middle; }
+  vertical-align: baseline; }
 
 .kss-parameters {
   padding-left: 40px;
