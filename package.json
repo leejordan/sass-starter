@@ -10,11 +10,13 @@
     "build:min": "node-sass --precision 8 --output-style compressed --include-path scss scss/master.scss styleguide/sass-starter/css/sass-starter.min.css",
     "build:max": "node-sass --precision 8 --output-style expanded --include-path scss scss/master.scss styleguide/sass-starter/css/sass-starter.css",
     "build:docs": "kss --config kss-config.json",
-    "watch": "watch 'npm run build' scss -d -u"
+    "watch": "watch 'npm run build' scss -d -u",
+    "start": "./node_modules/.bin/http-server ./styleguide -a localhost -c10"
   },
   "devDependencies": {
     "node-sass": "^4.0.0",
     "watch": "^1.0.0",
-    "kss": "^3.0.0-beta.18"
+    "kss": "^3.0.0-beta.18",
+    "http-server": "^0.10.0"
   }
 }

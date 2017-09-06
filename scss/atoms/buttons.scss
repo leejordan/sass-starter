@@ -10,10 +10,14 @@
 // Styles applied by default to all `button` elements and `type="button"` elements.
 // Can also be applied to other elements such as links with class `button`.
 //
+// :hover - Button hover state
+// :focus - Button focus state
+// :disabled - Button disabled state
+//
 // Markup:
-// <button>a button element</button>
-// <input type="button" value="an input of type button">
-// <a href="#0" class="button">a link that looks like a button</a>
+// <button class="button {{ modifier_class }}">a button element</button>
+// <input type="button"  class="button {{ modifier_class }}" value="an input of type button">
+// <a href="#0" class="button {{ modifier_class }}">a link that looks like a button</a>
 //
 // Styleguide Atoms.Buttons.Default
 
@@ -25,7 +29,7 @@ button,
     position: relative;
     vertical-align: middle;
     overflow: hidden;
-    margin-bottom: ($font-size-base * .31); // same size as default white space between inline elements
+    margin-bottom: ($font-size-base * .31); // same size as default white space between inline-block elements
     padding: ($font-size-base / 2) ($font-size-base * 2);
     font-family: $font-family-base;
     font-size: $font-size-base;

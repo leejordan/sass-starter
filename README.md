@@ -16,7 +16,15 @@ cd sass-starter
 npm install
 ```
 
-### Commands
+### Usage
+
+#### Local server
+
+```
+npm run start // starts a local server for styleguide on http://localhost:8080
+```
+
+#### Build css and styleguide
 
 ```
 npm run build:min // builds minified css in css folder
