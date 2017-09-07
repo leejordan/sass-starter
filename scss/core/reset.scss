@@ -103,6 +103,8 @@ button,
 select,
 textarea {
     line-height: inherit;
+    -webkit-appearance: none; // Remove default input apperance in webkit
+    -webkit-border-radius: 0; // remove default border-radius for form elements in webkit
 }
 
 a,
