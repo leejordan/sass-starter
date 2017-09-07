@@ -82,9 +82,16 @@
   });
 
 
-  // smooth scrolling.
+  // smooth scrolling and close menu when link is clicked
   (function smoothScrolling () {
     $('.kss-nav__item > a[href*=section]').on('click', function (e) {
+      var kssNavigation  = '.kss-navigation',
+          kssDocumentation  = '.kss-documentation',
+          kssHamburger = '.kss-header__hamburger';
+      $(kssNavigation).removeClass('kss-state-active');
+      $(kssDocumentation).removeClass('kss-state-active');
+      $(kssHamburger).removeClass('kss-state-active');
+
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

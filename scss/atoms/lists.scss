@@ -5,7 +5,7 @@
 // Styleguide Atoms.Lists
 
 
-// Ordered lists
+// Ordered list
 //
 // Markup:
 // <ol>
@@ -22,7 +22,7 @@ ol {
 }
 
 
-// Unordered lists
+// Unordered list
 //
 // Markup:
 // <ul>
@@ -37,3 +37,78 @@ ul {
     margin: 1em 0;
     padding: 0 0 0 1.5em;
 }
+
+
+// Unstyled list
+//
+// Works with both ordered and unordered lists to remove the number or bullet point.
+//
+// Markup:
+// <ul class="list-unstyled">
+//    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+//    <li>Aliquam tincidunt mauris eu risus.</li>
+//    <li>Vestibulum auctor dapibus neque.</li>
+// </ul>
+//
+// Styleguide Atoms.Lists.Unstyled
+
+.list-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+// Inline list
+//
+// Makes list items appear inline. Useful for a list of links in a sub nav.
+//
+// Markup:
+// <ul class="list-inline">
+//    <li><a href="#0">Terms and conditions</a></li>
+//    <li><a href="#0">Privacy policy</a></li>
+//    <li><a href="#0">Legal info</a></li>
+// </ul>
+//
+// Styleguide Atoms.Lists.Inline
+
+.list-inline {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        margin-right: 1em;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+// Description list
+//
+// A list with items that have descriptions. Useful for a collection of links with guidance.
+//
+// Markup:
+// <dl>
+//     <dt><a href="#0">Save as template</a></dt>
+//     <dd>Templates can be used to save you some repetition in the future.</dd>
+//     <dt><a href="#0">Save as draft</a></dt>
+//     <dd>Save this post and come back to it later.</dd>
+// </dl>
+//
+// Styleguide Atoms.Lists.Description
+
+dl {
+    margin: 1em 0;
+}
+
+dd {
+    margin-bottom: .5em;
+    color: $colour-text-muted;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+

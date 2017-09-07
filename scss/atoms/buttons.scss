@@ -10,14 +10,29 @@
 // Styles applied by default to all `button` elements and `type="button"` elements.
 // Can also be applied to other elements such as links with class `button`.
 //
+// ```
+// <button>a button element</button>
+// <input type="button" value="an input of type button">
+// <a href="#0" class="button">a link that looks like a button</a>
+// ```
+//
+// Disabled states  on `button` and `input` elements can be set with the `disabled` attribute.
+// Links, however, do not have a disabled property so you should use the class `is-disabled`
+//
+// ```
+// <button disabled>a button element</button>
+// <input disabled type="button" value="an input of type button">
+// <a href="#0" class="button is-disabled">a link that looks like a button</a>
+// ```
+//
 // :hover - hover state
 // :focus - focus state
 // :disabled - disabled state
 //
 // Markup:
-// <button class="button {{ modifier_class }}">a button element</button>
-// <input type="button"  class="button {{ modifier_class }}" value="an input of type button">
-// <a href="#0" class="button {{ modifier_class }}">a link that looks like a button</a>
+// <a href="#0" class="button {{ modifier_class }}">Filter results</a>
+//
+// Weight: -1
 //
 // Styleguide Atoms.Buttons.Default
 
@@ -39,28 +54,20 @@ button,
     cursor: pointer;
     text-decoration: none;
     background-image: none;
-    background-color: $colour-brand-primary;
-    color: $colour-text;
     border: 0;
     border-radius: $border-radius-base;
 
-    &:hover,
-    &:focus {
-        text-decoration: none;
-        color: $colour-text;
-        background-color: darken($colour-brand-primary, 10%);
-    }
-
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 3px $colour-text;
     }
 
     &:disabled,
-    .disabled {
+    &.is-disabled {
         text-decoration: line-through;
         pointer-events: none;
     }
+
+    @include generate-button();
 }
 
 
@@ -68,45 +75,73 @@ button,
 //
 // For when there is a single primary call to action that needs to stand out.
 //
+// :hover - hover state
+// :focus - focus state
+// :disabled - disabled state
+//
 // Markup:
-// <button class="button--primary">a primary button</button>
-// <a href="#0" class="button button--primary">a link that looks like a primary button</a>
+// <a href="#0" class="button button--primary {{ modifier_class }}">Sign up</a>
 //
 // Styleguide Atoms.Buttons.Primary
 
 .button--primary {
-    background-color: $colour-state-success;
+    $arguments: (
+        'colour-txt': $colour-text,
+        'colour-bg': $colour-state-success,
+        'colour-focus': $colour-text
+    );
 
-    &:hover,
-    &:focus {
-        background-color: darken($colour-state-success, 10%);
-    }
-
-    &:focus {
-        box-shadow: 0 0 0 3px $colour-text;
-    }
+    @include generate-button($arguments...);
 }
 
 
 // Secondary button
 //
-// For when there are multiple secondary calls to action.
+// For when there are multiple important calls to action.
+//
+// :hover - hover state
+// :focus - focus state
+// :disabled - disabled state
 //
 // Markup:
-// <button class="button--secondary">a secondary button</button>
-// <a href="#0" class="button button--secondary">a link that looks like a secondary button</a>
+// <a href="#0" class="button button--secondary {{ modifier_class }}">More info</a>
 //
 // Styleguide Atoms.Buttons.Secondary
 
 .button--secondary {
-    background-color: $colour-state-info;
+    $arguments: (
+        'colour-txt': $colour-text,
+        'colour-bg': $colour-state-info,
+        'colour-focus': $colour-text
+    );
 
-    &:hover,
-    &:focus {
-        background-color: darken($colour-state-info, 10%);
-    }
+    @include generate-button($arguments...);
+}
 
-    &:focus {
-        box-shadow: 0 0 0 3px $colour-text;
-    }
+
+// Danger button
+//
+// For a negative and potentially damaging action such as deleting something.
+// Please note if you're using a danger button you should also provide a
+// confirmation step, or an undo action.
+//
+// :hover - hover state
+// :focus - focus state
+// :disabled - disabled state
+//
+// Markup:
+// <a href="#0" class="button button--danger {{ modifier_class }}">Delete</a>
+//
+// Weight: 1
+//
+// Styleguide Atoms.Buttons.Danger
+
+.button--danger {
+    $arguments: (
+        'colour-txt': darken($colour-state-warning, 40%),
+        'colour-bg': lighten($colour-state-warning, 20%),
+        'colour-focus': darken($colour-state-warning, 40%)
+    );
+
+    @include generate-button($arguments...);
 }

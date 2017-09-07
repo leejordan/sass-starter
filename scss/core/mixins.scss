@@ -1,11 +1,51 @@
 // Mixins
 //
-// Generate css declarations programmatically
+// Generate css declarations programmatically. Include the mixin with your arguments and get some css proprties back.
 //
 // Styleguide Core.Mixins
 
+// Example usage
+//
+// ```
+// h1 {
+//     @include font-size(1.8);
+// }
+// ```
+//
+// Results in the following css being compiled:
+//
+// ```
+// h1 {
+//     font-size: 25.2px;
+//     font-size: 1.8rem;
+// }
+// ```
+//
+// Weight: -1
+//
+// Styleguide Core.Mixins.Example usage
 
-// font-size($size)
+// Multiple arguments
+//
+// Mixins by default expect arguments to be passed in the order in which they are defined.
+// Therefore, if you need to pass lots of arguments to a mixin you should use a map which makes life easier.
+//
+// ```
+// $arguments: (
+//     'colour-txt': $colour-text,
+//     'colour-bg': $colour-state-success,
+//     'colour-focus': $colour-text
+// );
+//
+// @include generate-button($arguments...);
+// ```
+//
+// Weight: -1
+//
+// Styleguide Core.Mixins.Multiple arguments
+
+
+// font-size()
 //
 // Produces font-sizes set with rem and a pixel fallback. Because we are using `rem`
 // all font sizes are relative to the pixel size set by variable $font-size-base.
@@ -19,3 +59,42 @@
     font-size: #{$size}rem;
 }
 
+
+// generate-button()
+//
+// Generates a button with the specified colours.
+//
+// $colour-txt = $colour-text - The text colour of the button.
+// $colour-txt-hover = darken($colour-text, 10%) - The text colour of the button's hover state.
+// $colour-bg = $colour-brand-primary - The background colour of the button.
+// $colour-bg-hover = darken($colour-brand-primary, 10%) - The background colour of the button's hover state.
+// $colour-focus = $colour-text - The box shadow colour of the button's focus state.
+//
+// Styleguide Core.Mixins.Generate button
+
+@mixin generate-button(
+        $colour-txt: $colour-text,
+        $colour-txt-hover: darken($colour-txt, 10%),
+        $colour-bg: $colour-brand-primary,
+        $colour-bg-hover: darken($colour-bg, 10%),
+        $colour-focus: $colour-text
+    ) {
+
+    background-color: $colour-bg;
+    color: $colour-txt;
+
+    &:hover,
+    &:focus {
+        background-color: $colour-bg-hover;
+        color: $colour-txt-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px $colour-focus;
+    }
+
+    &:disabled,
+    .disabled {
+        background-color: rgba($colour-bg, .5);
+    }
+}

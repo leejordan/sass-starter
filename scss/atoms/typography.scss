@@ -58,6 +58,24 @@ h6 {
     @include font-size(1);
 }
 
+// Headings with secondary text
+//
+// Markup:
+// <h2>Heading <small class="text-muted">with secondary text</small></h2>
+//
+// Styleguide Atoms.Typography.Headings with secondary text
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .text-muted {
+        font-weight: $font-weight-light;
+    }
+}
+
 
 // Paragraph
 //
@@ -73,13 +91,15 @@ p {
 
 // Small
 //
+// Small text is smaller in relation to the font size of the parent element, rather than a fixed value.
+//
 // Markup:
 // <small>small text</small>
 //
 // Styleguide Atoms.Typography.Small
 
 small {
-    @include font-size(.85);
+    font-size: .85em;
 }
 
 
@@ -124,11 +144,10 @@ em {
 
 blockquote {
     position: relative;
-    margin: 0;
-    margin-top: 2em;
+    margin: 1em 0;
     padding-left: 2.5em;
+    color: $colour-text-muted;
     font-weight: $font-weight-light;
-    color: lighten($colour-text, 20%);
 
     footer {
         color: $colour-brand-highlight;
@@ -152,4 +171,34 @@ hr {
     margin: 1em 0;
     border: 0;
     border-top: $border-default;
+}
+
+// Muted text
+//
+// Useful for small print.
+//
+// Markup:
+// <p class="text-muted">Muted text</p>
+// <small class="text-muted">Small muted text</small>
+//
+// Styleguide Atoms.Typography.Muted
+
+.text-muted {
+    color: $colour-text-muted;
+}
+
+
+// Lead text
+//
+// Useful for an introduction to a section.
+//
+// Markup:
+// <p class="text-lead">Lead text</p>
+//
+// Styleguide Atoms.Typography.Lead
+
+.text-lead {
+    font-size: 1.2rem;
+    font-weight: $font-weight-light;
+    letter-spacing: 0.025em;
 }
