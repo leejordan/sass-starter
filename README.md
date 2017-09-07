@@ -36,7 +36,7 @@ npm run watch // all of the above every time a file changes in scss folder
 
 #### Updating styleguide theme
 
-You can build a new css file for the styleguide theme by changing `styleguide-template/scss/styleguide.scss`
+You can build a new css file for the styleguide theme by changing `styleguide-template/scss/styleguide.scss` and using these commands.
 
 ```
 npm run build:styleguide-css // builds css file for the styleguide builder to use
