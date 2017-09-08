@@ -5,28 +5,27 @@
 // Styleguide Atoms.Forms
 
 
-// Labels
+// Label
 //
 // Markup:
 // <label for="name">your name</label>
 //
-// Styleguide Atoms.Forms.Labels
+// Styleguide Atoms.Forms.Label
 
 label,
 legend {
     display: inline-block;
     max-width: 100%;
     margin-bottom: ($font-size-base * .31);
+    color: $colour-text;
 }
 
 
-// Inputs
+// Input
 //
 // Styles applied by default to the following elements:
 //
 // ```
-// select
-// textarea
 // input[type="text"]
 // input[type="password"]
 // input[type="datetime"]
@@ -49,15 +48,9 @@ legend {
 // Markup:
 // <input id="name" type="text" name="name" placeholder="default text input">
 // <input id="password" type="password" name="password" placeholder="default password input">
-// <select id="option" name="option">
-//     <option value="1">option 1</option>
-//     <option value="2">option 2</option>
-//     <option value="3">option 3</option>
-// </select>
-// <textarea id="comment" name="comment" placeholder="default textarea"></textarea>
 // <input type="button" name="search" value="default input type button">
 //
-// Styleguide Atoms.Forms.Inputs
+// Styleguide Atoms.Forms.Input
 
 select,
 textarea,
@@ -79,48 +72,98 @@ input[type="color"] {
     display: block;
     width: 100%;
     height: 2.5em;
-    margin-bottom: $font-size-base;
-    padding: .5em 1em;
+    margin-bottom: $section-spacing-base;
+    padding: $section-spacing-small $section-spacing-base;
     @include font-size(1);
     line-height: $line-height-base;
     color: $colour-text;
     background-color: $colour-white;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid $colour-text;
-    border-radius: $border-radius-base; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+    border: $border-default;
+    border-radius: $border-radius-base;
+    box-shadow: $shadow-form-inset;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
     &:hover,
     &:focus {
         color: $colour-text;
-        background-color: rgba($colour-text, .1);
+        background-color: rgba($colour-text, .05);
     }
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 2px $colour-text;
+        background-color: $colour-white;
+        border-color: $colour-text-muted;
+        box-shadow: $shadow-form-inset-focus, $shadow-form-focus;
     }
 }
 
-// Overrides iOS user agent properties
-input[type="search"] {
-    -webkit-appearance: none;
-}
 
-// Make multiple select elements height not fixed
+// Select
+//
+// We're adding some styling to these but different browsers will ignore some or all of these styles.
+//
+// Please note that `display: block;` and `width: 100%;` are set by default so these
+// elements always take up the full width of their containing element.
+//
+// Markup:
+// <select id="option" name="option">
+//     <option value="1">option 1</option>
+//     <option value="2">option 2</option>
+//     <option value="3">option 3</option>
+// </select>
+// <select multiple size="6">
+//     <option value="1">option 1</option>
+//     <option value="2">option 2</option>
+//     <option value="3">option 3</option>
+//     <option value="4">option 4</option>
+//     <option value="5">option 5</option>
+//     <option value="6">option 6</option>
+// </select>
+//
+// Styleguide Atoms.Forms.Select
+
 select[multiple],
 select[size] {
-    height: auto;
+    padding: $section-spacing-small;
+
+    option {
+        padding: $section-spacing-small;
+        border-radius: $border-radius-base;
+        color: $colour-text;
+
+        &:hover {
+            background-color: rgba($colour-text, .1);
+        }
+
+        &:focus,
+        &:checked {
+            color: $colour-text;
+            background-color: $colour-state-success;
+            background-image: linear-gradient(0deg, $colour-state-success, $colour-state-success);
+        }
+    }
 }
 
-// Give textarea a min height
+// Textarea
+//
+// We set a minimum height and only allow vertical resizing
+//
+// Please note that `display: block;` and `width: 100%;` are set by default so these
+// elements always take up the full width of their containing element.
+//
+// Markup:
+// <textarea id="comment" name="comment" placeholder="default textarea"></textarea>
+//
+// Styleguide Atoms.Forms.Textarea
+
 textarea {
-    height: auto;
+    resize: vertical; // Only allow vertical resizing of texareas
     min-height: 10em;
 }
 
 
-// Radio buttons
+// Radio
 //
 // Styles applied by default to radio type inputs.
 //
@@ -134,9 +177,9 @@ textarea {
 // <input type="radio" name="radio" id="radio2" value="2" />
 // <label for="radio2"> radio 2</label>
 //
-// Styleguide Atoms.Forms.Radio buttons
+// Styleguide Atoms.Forms.Radio
 
-// Checkboxes
+// Checkbox
 //
 // Styles applied by default to checkbox type inputs.
 //
@@ -150,7 +193,7 @@ textarea {
 // <input type="checkbox" name="checkbox" id="checkbox2" value="2" />
 // <label for="checkbox2"> checkbox 2</label>
 //
-// Styleguide Atoms.Forms.Checkboxes
+// Styleguide Atoms.Forms.Checkbox
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -170,7 +213,6 @@ input[type="checkbox"] {
         border-radius: $border-radius-base;
 
         &:hover {
-            color: $colour-text;
             background-color: rgba($colour-text, .1);
         }
     }

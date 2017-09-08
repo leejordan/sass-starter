@@ -53,8 +53,7 @@ ul {
 // Styleguide Atoms.Lists.Unstyled
 
 .list-unstyled {
-    list-style-type: none;
-    padding-left: 0;
+    @include list-unstyled();
 }
 
 
@@ -72,8 +71,7 @@ ul {
 // Styleguide Atoms.Lists.Inline
 
 .list-inline {
-    list-style-type: none;
-    padding-left: 0;
+    @include list-unstyled();
 
     li {
         display: inline-block;

@@ -1,0 +1,101 @@
+// Panels
+//
+// A panel denotes a visually seperate section of a page. You should consider using
+// [the most semantically appropriate element](http://blog.teamtreehouse.com/use-html5-sectioning-elements)
+// such as `aside` or `section`. If in doubt, use `div`.
+//
+// A panel will always take up the full width of their containing element.
+// By default we remove the top margin from the first element in a panel
+// and the bottom margin from the last child. This ensures consistent spacing.
+//
+// Styleguide Molecules.Panel
+
+
+// Default panel
+//
+// Markup:
+// <div class="panel">
+//     <div class="panel__body">
+//         <p>Basic panel example</p>
+//     </div>
+// </div>
+//
+// Styleguide Molecules.Panel.Default panel
+
+// Panel with sections
+//
+// Add multiple body sections to a panel to get a visible section divider. Can also be used with a list element.
+//
+// Markup:
+// <div class="panel">
+//     <div class="panel__body">
+//         <p>Panel body section</p>
+//     </div>
+//     <div class="panel__body">
+//         <p>Panel body section</p>
+//     </div>
+// </div>
+//
+// Styleguide Molecules.Panel.Panel with sections
+
+.panel {
+    display: block;
+    margin-bottom: $section-spacing-base;
+    border: $border-default;
+    border-radius: $border-radius-base;
+    box-shadow: $shadow-panel;
+}
+
+.panel__body {
+    padding: $section-spacing-base;
+    @include inner-content-fix();
+
+    & + & {
+        border-top: $border-default;
+    }
+}
+
+
+// Panel with heading
+//
+// Optional heading section for panels.
+//
+// Markup:
+// <div class="panel">
+//     <div class="panel__heading">
+//         <p>Panel heading</p>
+//     </div>
+//     <div class="panel__body">
+//         <p>Basic panel example</p>
+//     </div>
+// </div>
+//
+// Styleguide Molecules.Panel.Panel with heading
+.panel__heading {
+    padding: $section-spacing-small $section-spacing-base;
+    border-bottom: $border-default;
+    border-top-right-radius: ($border-radius-base - 2);
+    border-top-left-radius: ($border-radius-base - 2);
+    background-color: $colour-ui-panel;
+    @include inner-content-fix();
+}
+
+
+// Inset panel
+//
+// A panel variation with an inset effect. Panel headings are not intended to be used in inset panels.
+//
+// Markup:
+// <div class="panel panel--inset">
+//     <div class="panel__body">
+//         <p>Inset panel example</p>
+//     </div>
+// </div>
+//
+// Styleguide Molecules.Panel.Inset panel
+
+.panel--inset {
+    background-color: $colour-ui-panel;
+    box-shadow: $shadow-panel-inset;
+}
+

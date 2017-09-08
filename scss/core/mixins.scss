@@ -52,7 +52,7 @@
 //
 // $size = 1 - The desired font size in rem
 //
-// Styleguide Core.Mixins.Font size
+// Styleguide Core.Mixins.font-size
 
 @mixin font-size($size: 1) {
     font-size: ($font-size-base * $size);
@@ -70,7 +70,7 @@
 // $colour-bg-hover = darken($colour-brand-primary, 10%) - The background colour of the button's hover state.
 // $colour-focus = $colour-text - The box shadow colour of the button's focus state.
 //
-// Styleguide Core.Mixins.Generate button
+// Styleguide Core.Mixins.generate-button
 
 @mixin generate-button(
         $colour-txt: $colour-text,
@@ -97,4 +97,33 @@
     .disabled {
         background-color: rgba($colour-bg, .5);
     }
+}
+
+
+// inner-content-fix()
+//
+// Remove the top margin from the first child of an element and the bottom margin from the last child.
+// This is useful for containing elements with an inner top and bottom margin
+//
+// null - This mixin does not accept arguments
+//
+// Styleguide Core.Mixins.inner-content-fix
+
+@mixin inner-content-fix() {
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// list-unstyled()
+// Remove list styling from a list
+
+@mixin list-unstyled() {
+    list-style-type: none;
+    padding-left: 0;
 }
